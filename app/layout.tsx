@@ -4,11 +4,19 @@ import { ReactNode } from "react";
 import { Inter } from '@next/font/google';
 import { ClerkProvider } from "@clerk/nextjs";
 
+import '@stream-io/video-react-sdk/dist/css/styles.css'
+import 'react-datepicker/dist/react-datepicker.css';
+
+import { Toaster } from "@/components/ui/toaster"
+
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Zoom",
-  description: "Ứng dụng Zoom Clone với Next.js và TypeScript",
-  keywords: "zoom, clone, nextjs, typescript"
+  description: "Zoom APP with Next.js and TypeScript",
+  keywords: "zoom, clone, nextjs, typescript",
+  icons: {
+    icon: '/icons/logo.svg',
+  }
 };
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
@@ -30,6 +38,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
       >
         <body className={`${inter.className} bg-dark-2`}>
           {children}
+          <Toaster />
         </body>
       </ClerkProvider>
     </html>

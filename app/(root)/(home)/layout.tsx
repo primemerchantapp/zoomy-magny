@@ -1,6 +1,18 @@
 import React, { ReactNode } from 'react'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
+import { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+  title: "Zoom",
+  description: "Zoom APP with Next.js and TypeScript",
+  keywords: "zoom, clone, nextjs, typescript",
+  icons: {
+    icon: '/icons/logo.svg',
+  }
+};
+
 const HomeLayout = ({ children }: { children: ReactNode }) => {
   return (
     <main className='relative'>
